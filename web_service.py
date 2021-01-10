@@ -1,4 +1,4 @@
-from bottle import route, run, template, request
+from bottle import route, run, template, request, error
 import petl as etl
 import data_integration as di
 
@@ -20,6 +20,21 @@ services => postcode filtered data
 clinics => service filtered data
 records => set filtered data for accessing from template
 '''
+
+
+@error(404)
+def error404(error):
+    return '<h1>Page not found. Enter correct url.</h1>'
+
+
+@error(405)
+def error405(error):
+    return '<h1>Sorry method not allow. Please review your method once more. <br><span align="center">Thankyou</span></h1>'
+
+
+@error(500)
+def error500(error):
+    return '<h1>Something went wrong. Please go to homepage.</h1>'
 
 
 @route('/')

@@ -16,6 +16,7 @@
 <section>
     <p align="center">Clinics with service : <b>{{service}}</b></p>
     <table border="1" align="center">
+        %if records:
         <thead align="center">
         <th>S.N</th>
         <th>Clinic ID</th>
@@ -34,6 +35,9 @@
         </tr>
         %end
         </tbody>
+        %else:
+        <p align="center"><em>No data found !!!</em></p>
+        %end
     </table>
 </section>
 

@@ -7,13 +7,16 @@
 <body>
 <section>
     <div>
-        <h1 align="center" ><b>Queensland Health</b></h1>
-        <hr><hr><br>
+        <h1 align="center"><b>Queensland Health</b></h1>
+        <hr>
+        <hr>
+        <br>
     </div>
 </section>
 <section>
     <p align="center">Services of Postcode : <b>{{postcode}}</b></p>
     <table border="1" align="center">
+        %if records:
         <thead align="center">
         <th>S.N</th>
         <th>Service</th>
@@ -28,8 +31,10 @@
         </tr>
         %end
         </tbody>
+        %else:
+        <p align="center"><em>No data found !!!</em></p>
+        %end
     </table>
 </section>
-
 </body>
 </html>
