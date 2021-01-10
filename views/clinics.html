@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Queensland Health | Clinics</title>
+</head>
+<body>
+<section>
+    <div>
+        <h1 align="center"><b>Queensland Health</b></h1>
+        <hr>
+        <hr>
+        <br>
+    </div>
+</section>
+<section>
+    <p align="center">Clinics with service : <b>{{service}}</b></p>
+    <table border="1" align="center">
+        <thead align="center">
+        <th>S.N</th>
+        <th>Clinic ID</th>
+        <th>Suburb</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        </thead>
+        <tbody align="center">
+        %for i,record in enumerate(records):
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{record['ClinicID']}}</td>
+            <td>{{record['Suburb']}}</td>
+            <td>{{record['Latitude']}}</td>
+            <td>{{record['Longitude']}}</td>
+        </tr>
+        %end
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>

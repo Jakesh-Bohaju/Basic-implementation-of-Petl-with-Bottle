@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Queensland Health | All Record</title>
+</head>
+<body>
+<section>
+    <div>
+        <h1 align="center" ><b>Queensland Health</b></h1>
+        <hr><hr><br>
+    </div>
+</section>
+<section>
+    <div>
+        <div>
+            <form action="/getServices" method="get">
+                Postcode : <input name="postcode" type="text"/>
+                <input value="Search" type="submit"/>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form action="/getClinics" method="get">
+                Service : <input name="service" type="text"/>
+                <input value="Search" type="submit"/>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div>
+        <table border="1" align="center">
+            <thead align="center">
+            <th>S.N</th>
+            <th>Clinic Service ID</th>
+            <th>Clinic ID</th>
+            <th>Service</th>
+            <th>Suburb</th>
+            <th>Post Code</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            </thead>
+            <tbody align="center">
+            %for i,record in enumerate(records):
+            <tr>
+                <td>{{i+1}}</td>
+                %for key,data in record.items():
+                <td>{{data}}</td>
+                %end
+            </tr>
+            %end
+            </tbody>
+        </table>
+    </div>
+</section>
+
+</body>
+</html>
